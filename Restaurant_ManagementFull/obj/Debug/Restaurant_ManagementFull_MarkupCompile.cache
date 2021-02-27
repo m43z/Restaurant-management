@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Meysam\source\repos\Restaurant_ManagementFull\Restaurant_ManagementFull\obj\Debug\
+C:\Users\Meysam\Source\Repos\Restaurant-management\Restaurant_ManagementFull\obj\Debug\
 Restaurant_ManagementFull
 none
 false
 DEBUG;TRACE
-C:\Users\Meysam\source\repos\Restaurant_ManagementFull\Restaurant_ManagementFull\App.xaml
+C:\Users\Meysam\Source\Repos\Restaurant-management\Restaurant_ManagementFull\App.xaml
 6691627545
 
 25-636238036
-21-680051902
+21-774505161
 AddCustomerWnd.xaml;AddFood.xaml;AddOrEditeFoods.xaml;InvoiceWnd.xaml;MainWindow.xaml;Stayle\MyStayle.xaml;
 
 True
