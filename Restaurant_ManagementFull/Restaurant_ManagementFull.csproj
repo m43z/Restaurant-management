@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FirstWindowViewModel.cs" />
+    <Compile Include="ViewModel\RellayCommand.cs" />
     <Compile Include="View\AddCustomerWnd.xaml.cs">
       <DependentUpon>AddCustomerWnd.xaml</DependentUpon>
     </Compile>
@@ -215,9 +218,7 @@
   <ItemGroup>
     <Resource Include="Image\-.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
