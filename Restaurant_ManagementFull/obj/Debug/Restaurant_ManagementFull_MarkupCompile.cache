@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Meysam\Source\Repos\Restaurant-management\Restaurant_ManagementFull\App.xaml
-6691627545
+51192269954
 
-25-636238036
+23-623523802
 21-774505161
-AddCustomerWnd.xaml;AddFood.xaml;AddOrEditeFoods.xaml;InvoiceWnd.xaml;MainWindow.xaml;Stayle\MyStayle.xaml;
+View\AddCustomerWnd.xaml;View\AddFood.xaml;View\AddOrEditeFoods.xaml;View\MainWindow.xaml;Stayle\MyStayle.xaml;
 
-True
+False
 

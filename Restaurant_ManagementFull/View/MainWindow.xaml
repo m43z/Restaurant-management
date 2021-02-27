@@ -73,7 +73,7 @@
           <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnAddCustomer">
             <Button.Content>
               <StackPanel>
-                <Image Source="Untitlsed 3.png" Width="32" Height="32" />
+                <Image Source="/Image/Untitlsed 3.png" Width="32" Height="32" />
                 <TextBlock Text="اضافه کردن" FontSize="8" />
               </StackPanel>
             </Button.Content>
@@ -82,7 +82,7 @@
           <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="15 0" Click="BtnEditeCustomer" >
             <Button.Content>
               <StackPanel>
-                <Image Source="Edite.png" Width="32" Height="32" />
+                <Image Source="/Image/Edite.png" Width="32" Height="32" />
                 <TextBlock Text="ویرایش کردن" FontSize="8" />
               </StackPanel>
             </Button.Content>
@@ -91,7 +91,7 @@
           <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnRemove" >
             <Button.Content>
               <StackPanel>
-                <Image Source="Remove.png" Width="32" Height="32" />
+                <Image Source="/Image/Remove.png" Width="32" Height="32" />
                 <TextBlock Text="حذف کردن" FontSize="8" />
               </StackPanel>
             </Button.Content>
@@ -127,13 +127,13 @@
             <StackPanel Orientation="Horizontal">
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="20" x:Name="BtnPlus" Click="BtnPlus_Click">
                 <Button.Content>
-                  <Image Source="+.png"/>
+                  <Image Source="/Image/+.png"/>
                 </Button.Content>
               </Button>
               <TextBlock  Text="1" x:Name="TxbCount" Width="23" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-1,0,0,0" Padding="7,0,0,0" FontWeight="Bold"/>
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Width="20" x:Name="BtnMinez" Click="BtnMinez_Click">
                 <Button.Content>
-                  <Image Source="-.png"/>
+                  <Image Source="/Image/-.png"/>
                 </Button.Content>
               </Button>
             </StackPanel>
@@ -168,7 +168,7 @@
       <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="15" Click="BtnFoodCatogory" >
         <Button.Content>
           <StackPanel>
-            <Image Source="AddChild.png" Width="32" Height="32" />
+            <Image Source="/Image/AddChild.png" Width="32" Height="32" />
             <TextBlock Text="دسته بندی" FontSize="8" />
           </StackPanel>
         </Button.Content>
@@ -177,7 +177,7 @@
       <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="0 15" Click="BtnSubmit" >
         <Button.Content>
           <StackPanel>
-            <Image Source="Save.png" Width="32" Height="32" />
+            <Image Source="/Image/Save.png" Width="32" Height="32" />
             <TextBlock Text="ذخیره کردن" FontSize="8" />
           </StackPanel>
         </Button.Content>
@@ -185,7 +185,7 @@
 
     </StackPanel>
 
-    <Border Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" BorderBrush="Black" BorderThickness="1" CornerRadius="8">
+    <Border  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" BorderBrush="Black" BorderThickness="1" CornerRadius="8">
       <Grid>
         <TextBlock x:Name="TxbAmount" Text="مبلغ کل :" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 50 0" FontSize="22"/>
       </Grid>

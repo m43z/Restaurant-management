@@ -88,7 +88,7 @@
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnAddCategoryFood" Margin="0 5 0 0" >
                 <Button.Content>
                   <StackPanel>
-                    <Image Source="AddChild.png" Width="32" Height="32" />
+                    <Image Source="/Image/AddChild.png" Width="32" Height="32" />
                     <TextBlock Text="اضافه کردن ریشه" FontSize="8" TextWrapping="Wrap" Width="40" TextAlignment="Center"/>
                   </StackPanel>
                 </Button.Content>
@@ -97,7 +97,7 @@
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="10 0 0 5" Click="BtnAddFood">
                 <Button.Content>
                   <StackPanel>
-                    <Image Source="AddCatogry.png" Width="32" Height="32" />
+                    <Image Source="/Image/AddCatogry.png" Width="32" Height="32" />
                     <TextBlock Text="اضافه کردن غذا" FontSize="8"/>
                   </StackPanel>
                 </Button.Content>
@@ -106,7 +106,7 @@
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black"  Margin="10 0 0 5" >
                 <Button.Content>
                   <StackPanel>
-                    <Image Source="EditeCatogry.png" Width="32" Height="32" />
+                    <Image Source="/Image/EditeCatogry.png" Width="32" Height="32" />
                     <TextBlock Text="ویرایش کردن" FontSize="8" />
                   </StackPanel>
                 </Button.Content>
@@ -115,7 +115,7 @@
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="10 0 0 5" Click="BtnRemoveFood" >
                 <Button.Content>
                   <StackPanel>
-                    <Image Source="DeleteCatogry.png" Width="32" Height="32" />
+                    <Image Source="/Image/DeleteCatogry.png" Width="32" Height="32" />
                     <TextBlock Text="حذف کردن" FontSize="8" />
                   </StackPanel>
                 </Button.Content>
@@ -124,7 +124,7 @@
               <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black"  Margin="215 0 0 5" Click="BtnCLoseFoodWnd" >
                 <Button.Content>
                   <StackPanel>
-                    <Image Source="cANCEL.png" Width="32" Height="32" />
+                    <Image Source="/Image/cANCEL.png" Width="32" Height="32" />
                     <TextBlock Text=" انصراف" FontSize="8" />
                   </StackPanel>
                 </Button.Content>

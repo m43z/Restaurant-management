@@ -70,7 +70,7 @@
              Width="40" Height="40" Click="BtnSaveCustomer">
               <Button.Content>
                 <StackPanel>
-                  <Image Source="Save.png" Width="25" Height="25" />
+                  <Image Source="/Image/Save.png" Width="25" Height="25" />
                   <TextBlock Text="ذخیره کردن" FontSize="8" />
                 </StackPanel>
               </Button.Content>
@@ -80,7 +80,7 @@
               Foreground="Black"  Width="40" Height="40" Margin="160 0 0 0" Click="CloseAddWnd">
               <Button.Content>
                 <StackPanel>
-                  <Image Source="cANCEL.png" Width="25" Height="25" />
+                  <Image Source="/Image/cANCEL.png" Width="25" Height="25" />
                   <TextBlock Text="انصراف" FontSize="8" />
                 </StackPanel>
               </Button.Content>
