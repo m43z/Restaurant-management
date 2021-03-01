@@ -37,30 +37,30 @@ namespace Restaurant_ManagementFull
 
     private void BtnSaveCustomer(object sender, RoutedEventArgs e)
     {
-      if (Customer != null)
-      {
-        Customer.FirstName = TxtFirstName.Text;
-        Customer.LastName = TxtLastName.Text;
-        Customer.GenderId = (int)CmbGender.SelectedValue;
-        Customer.Mobile = TxtMobile.Text;
-        Customer.Address = TxtAddress.Text;
-        _context.Entry(Customer).State = EntityState.Modified;
-      }
-      else
-      {
-        Customer = new Customer
-        {
-          FirstName = TxtFirstName.Text,
-          LastName = TxtLastName.Text,
-          Mobile = TxtMobile.Text,
-          Address = TxtAddress.Text,
-          GenderId = (int)CmbGender.SelectedValue,
-        };
-        _context.CustomerTbl.Add(Customer);
-      }
+      //if (Customer != null)
+      //{
+      //  Customer.FirstName = TxtFirstName.Text;
+      //  Customer.LastName = TxtLastName.Text;
+      //  Customer.GenderId = (int)CmbGender.SelectedValue;
+      //  Customer.Mobile = TxtMobile.Text;
+      //  Customer.Address = TxtAddress.Text;
+      //  _context.Entry(Customer).State = EntityState.Modified;
+      //}
+      //else
+      //{
+      //  Customer = new Customer
+      //  {
+      //    FirstName = TxtFirstName.Text,
+      //    LastName = TxtLastName.Text,
+      //    Mobile = TxtMobile.Text,
+      //    Address = TxtAddress.Text,
+      //    GenderId = (int)CmbGender.SelectedValue,
+      //  };
+      //  _context.CustomerTbl.Add(Customer);
+      //}
 
 
-      if (_context.SaveChanges() > 0)
+      //if (_context.SaveChanges() > 0)
         DialogResult = true;
     }
 
@@ -72,7 +72,7 @@ namespace Restaurant_ManagementFull
         CmbGender.SelectedValue = Customer.GenderId;
         TxtLastName.Text = Customer.LastName;
         TxtMobile.Text = Customer.Mobile;
-        TxtAddress.Text = Customer.Mobile;
+        TxtAddress.Text = Customer.Address;
         TxbTitleCustomer.Text = "ویرایش کردن مشتری";
       }
       CmbGender.ItemsSource = _context.LookupTbl.Where(l => l.GourpId == 10).ToList();

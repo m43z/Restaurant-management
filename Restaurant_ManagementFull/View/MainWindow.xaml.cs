@@ -12,10 +12,10 @@ using System.Windows.Media;
 using Restaurant_ManagementFull.DataBase;
 using System.Data.Entity;
 using Restaurant_ManagementFull.Models;
+using Restaurant_ManagementFull.ViewModel;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Prism.Services.Dialogs;
 
 namespace Restaurant_ManagementFull
 {
@@ -31,6 +31,7 @@ namespace Restaurant_ManagementFull
     private List<InvoiceDetails> _invoiceDetails;
     private InvoiceDetails _invoiceDetailses;
     public Invoice _invoice { get; set; }
+    public CustomerViewModel CustomerWm = new CustomerViewModel();
 
     public DateTime Time { get; set; } = DateTime.Now;
 
@@ -53,12 +54,15 @@ namespace Restaurant_ManagementFull
 
     private void BtnAddCustomer(object sender, RoutedEventArgs e)
     {
+      var newCustomer = new Customer();
+      var CustomerWnd = new AddCustomerWnd();
+      CustomerWnd.DataContext = newCustomer;
 
-      AddCustomerWnd CostomerWnd = new AddCustomerWnd();
-
-      if (CostomerWnd.ShowDialog().Value)
+      if (CustomerWnd.ShowDialog().Value)
       {
-        ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
+        _context.CustomerTbl.Add(newCustomer);
+        _context.SaveChanges();
+       // ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
       }
     }
 
@@ -70,7 +74,7 @@ namespace Restaurant_ManagementFull
 
       Refresh();
       RefreshCmbFood();
-      ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
+     // ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
       ItcFood.ItemsSource = _context.FoodTbl.ToList();
       DataGridInviceload.ItemsSource = _context.InvoiceTbl.Where(i=>i.Date.Day==Time.Date.Day).ToList();
     }
@@ -78,18 +82,19 @@ namespace Restaurant_ManagementFull
     public void Refresh()
     {
       CmbFoodType.ItemsSource = _context.LookupTbl.Where(l => l.GourpId == 20).ToList();
-      ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
+      //ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
     }
 
     private void BtnEditeCustomer(object sender, RoutedEventArgs e)
     {
       if (_selectedCustomer != null)
       {
-        AddCustomerWnd CustomerWnd = new AddCustomerWnd();
-        CustomerWnd.Customer = _selectedCustomer;
+       //var CustomerWm = new CustomerViewModel();
+        var CustomerWnd = new AddCustomerWnd();
+        CustomerWnd.DataContext = _selectedCustomer;
         if (CustomerWnd.ShowDialog().Value)
         {
-          ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
+          //ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
         }
       }
     }
@@ -102,7 +107,7 @@ namespace Restaurant_ManagementFull
         {
           _context.CustomerTbl.Remove(_selectedCustomer);
           _context.SaveChanges();
-          ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
+         // ItcCustomer.ItemsSource = _context.CustomerTbl.ToList();
         }
       }
     }
@@ -136,7 +141,7 @@ namespace Restaurant_ManagementFull
 
     private void DvgCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-      _selectedCustomer = ItcCustomer.SelectedItem as Customer;
+      //_selectedCustomer = ItcCustomer.SelectedItem as Customer;
       if (_selectedCustomer != null)
       {
         TxbCustomerName.Text = _selectedCustomer.FullName;
@@ -220,7 +225,7 @@ namespace Restaurant_ManagementFull
 
       DataGridInviceDetails.Visibility = Visibility.Collapsed;
       DataGridInvice.Visibility = Visibility.Visible;
-      _selectedCustomer = ItcCustomer.SelectedItem as Customer;
+      //_selectedCustomer = ItcCustomer.SelectedItem as Customer;
       DataGridInvice.ItemsSource = _context.InvoiceTbl.Where(i => i.CustomerId == _selectedCustomer.Id).Include("Customer").ToList();
 
     }

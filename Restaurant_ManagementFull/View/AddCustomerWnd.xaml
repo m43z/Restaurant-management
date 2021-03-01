@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Restaurant_ManagementFull"
+        xmlns:local="clr-namespace:Restaurant_ManagementFull" 
+        xmlns:ViewModel="clr-namespace:Restaurant_ManagementFull.ViewModel"
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
@@ -13,10 +14,13 @@
         Title="AddCustomerWnd" 
         FlowDirection="RightToLeft"
         FontFamily="vazir"
-        Loaded="Window_Loaded"
         Height="400" 
         Width="300">
-    <Grid>
+
+  <Window.Resources>
+    <ViewModel:CustomerViewModel x:Key="CustomerVM"/>
+  </Window.Resources>
+    <Grid >
     <Grid.RowDefinitions>
       <RowDefinition Height="30"/>
       <RowDefinition/>
@@ -32,28 +36,28 @@
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
           <TextBlock Text="نام :" Margin="5 0" VerticalAlignment="Center"/>
-          <TextBox x:Name="TxtFirstName" Width="180" />
+          <TextBox x:Name="TxtFirstName" Width="180" Text="{Binding FirstName}"  />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
           <TextBlock Text="نام خانوادگی :" Margin="5 0" VerticalAlignment="Center"/>
-          <TextBox x:Name="TxtLastName" Width="180"/>
+          <TextBox x:Name="TxtLastName" Width="180" Text="{Binding LastName}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
           <TextBlock Text=" جنسیت :" Margin="5 0" VerticalAlignment="Center"/>
-          <ComboBox x:Name="CmbGender" Width="180" SelectedValuePath="Id" DisplayMemberPath="Title"/>
+          <ComboBox x:Name="CmbGender" Width="180" ItemsSource="{Binding Source={StaticResource CustomerVM}, Path=GenderLookup}" SelectedValue="{Binding GenderId}" SelectedValuePath="Id" DisplayMemberPath="Title"/>
         </StackPanel>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0">
           <TextBlock Text="موبایل :" Margin="5 0" VerticalAlignment="Center"/>
-          <TextBox x:Name="TxtMobile" Width="180"/>
+          <TextBox x:Name="TxtMobile" Width="180" Text="{Binding Mobile}"/>
         </StackPanel>
 
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 0" >
           <TextBlock Text="آدرس :" Margin="5 0" VerticalAlignment="Center"/>
-          <TextBox x:Name="TxtAddress" Width="180" Height="90"/>
+          <TextBox x:Name="TxtAddress" Width="180" Height="90" Text="{Binding Address}" />
         </StackPanel>
 
       </StackPanel>
@@ -67,7 +71,7 @@
         <Grid >
           <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black"
-             Width="40" Height="40" Click="BtnSaveCustomer">
+             Width="40" Height="40" Command="{Binding SaveCommand}" Click="BtnSaveCustomer" >
               <Button.Content>
                 <StackPanel>
                   <Image Source="/Image/Save.png" Width="25" Height="25" />

@@ -93,6 +93,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\FirstWindowViewModel.cs" />
     <Compile Include="ViewModel\RellayCommand.cs" />
     <Compile Include="View\AddCustomerWnd.xaml.cs">

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ViewModel="clr-namespace:Restaurant_ManagementFull.ViewModel"
         xmlns:local="clr-namespace:Restaurant_ManagementFull"
         mc:Ignorable="d"
         ResizeMode="NoResize"
@@ -12,8 +13,12 @@
         Loaded="Window_Loaded"
         WindowStyle="None"
         FlowDirection="RightToLeft"
-        Title="MainWindow" Height="550" Width="1000">
-  <Grid>
+        Height="550" Width="1000">
+  <Window.Resources>
+    <ViewModel:FirstWindowViewModel x:Key="FirstVm"/>
+  </Window.Resources>
+  
+  <Grid DataContext="{StaticResource FirstVm}">
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="1*"/>
       <ColumnDefinition Width="1*"/>
@@ -46,7 +51,7 @@
 
     <Border Grid.Row="1" Margin="8" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" CornerRadius="8">
 
-      <ListView Margin="5"  x:Name="ItcCustomer" SelectedItem="" SelectionChanged="DvgCustomer_SelectionChanged" Background="{x:Null}" BorderBrush="{x:Null}" MouseDoubleClick="ItcCustomer_MouseDoubleClick" Style="{DynamicResource ListViewStyle2}"  >
+      <ListView Margin="5"  ItemsSource="{Binding CustomerList, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding SelectCustomer}"  Background="{x:Null}" BorderBrush="{x:Null}"  Style="{DynamicResource ListViewStyle2}"  >
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal">
@@ -70,7 +75,7 @@
     <Border Grid.Row="2" Margin="10" BorderBrush="Black" BorderThickness="1" CornerRadius="8" >
       <Grid >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnAddCustomer">
+          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Command="{Binding SaveCostomerCommand}">
             <Button.Content>
               <StackPanel>
                 <Image Source="/Image/Untitlsed 3.png" Width="32" Height="32" />
@@ -79,7 +84,7 @@
             </Button.Content>
           </Button>
 
-          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="15 0" Click="BtnEditeCustomer" >
+          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Margin="15 0" Command="{Binding EditeCustomerCommand}" >
             <Button.Content>
               <StackPanel>
                 <Image Source="/Image/Edite.png" Width="32" Height="32" />
@@ -88,7 +93,7 @@
             </Button.Content>
           </Button>
 
-          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="BtnRemove" >
+          <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Command="{Binding RemovceCustomerCommand}">
             <Button.Content>
               <StackPanel>
                 <Image Source="/Image/Remove.png" Width="32" Height="32" />
